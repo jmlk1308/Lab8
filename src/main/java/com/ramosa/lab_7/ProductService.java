@@ -7,7 +7,7 @@ import java.util.*;
 public class ProductService {
 
     private final Map<Long, Product> products = new HashMap<>();
-    private Long nextId = 4L; // Start IDs at 4
+    private Long nextId = 4L; 
 
     public ProductService() {
 
@@ -24,10 +24,6 @@ public class ProductService {
         return products.get(id);
     }
 
-    /**
-     * FIX: This method must accept a Product object, not String and double,
-     * to match the ProductResolver's invocation.
-     */
     public Product addProduct(Product product) {
         product.setId(nextId++);
         products.put(product.getId(), product);
