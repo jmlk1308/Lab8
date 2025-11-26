@@ -10,20 +10,16 @@ input ProductInput {
 }
 
 type Query {
-    # Fetches all products
+   
     allProducts: [Product!]!
 
-    # Fetches a single product by ID
     productById(id: ID!): Product
 }
 
 type Mutation {
-    # Adds a new product
     addProduct(product: ProductInput!): Product!
 
-    # Updates a product
     updateProduct(id: ID!, product: ProductInput!): Product
 
-    # Deletes a product (returns true if successful)
     deleteProduct(id: ID!): Boolean!
 }
